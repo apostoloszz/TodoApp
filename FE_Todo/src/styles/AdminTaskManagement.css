@@ -1,0 +1,98 @@
+.admin-task-page {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.admin-task-container {
+    margin-top: 20px;
+}
+
+.users-list-card {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.users-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-item {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.user-item:hover {
+    background-color: #f0f0f0;
+}
+
+.user-item.active {
+    background-color: #e6f7ff;
+    border-left-color: #1890ff;
+    font-weight: 500;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+    margin-left: 24px;
+}
+
+.tasks-card {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.select-user-message {
+    height: calc(100vh - 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.large-icon {
+    font-size: 48px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.unauthorized-message {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.center-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+/* Status Badge Styles */
+.ant-badge-status-text {
+    margin-left: 8px;
+}
+
+/* Table Action Button Spacing */
+.ant-table-cell .ant-space {
+    flex-wrap: wrap;
+    gap: 8px;
+}

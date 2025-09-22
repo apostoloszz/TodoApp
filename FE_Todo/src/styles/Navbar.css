@@ -1,0 +1,144 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    margin-bottom: 24px;
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.navbar-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.navbar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    border-radius: 20px;
+}
+
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.icon-button {
+    background: #f6f6f6;
+    color: #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.date-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: 8px;
+}
+
+.date-display div:first-child {
+    font-weight: 500;
+}
+
+.date-display div:last-child {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.admin-role-tag {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 0 4px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+}
+
+/* Notifications styles */
+.notification-container {
+    position: relative;
+}
+
+.notifications-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 320px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    padding: 16px;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.notifications-header h3 {
+    margin: 0;
+}
+
+.notifications-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.no-notifications {
+    text-align: center;
+    padding: 20px 0;
+    color: #999;
+}
+
+.notifications-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-content {
+    font-size: 14px;
+    color: #333;
+}
+
+.notification-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}

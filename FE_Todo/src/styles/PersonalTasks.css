@@ -1,0 +1,386 @@
+/* PersonalTasks.css */
+.personal-tasks-page {
+    display: flex;
+    height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 68px;
+    padding: 24px;
+    background-color: #f5f8ff;
+    min-height: 100vh;
+}
+
+/* Task Categories Section */
+.task-categories-section {
+    margin-bottom: 24px;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.categories-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.go-back-btn {
+    color: #666;
+    font-size: 14px;
+}
+
+.categories-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    transition: all 0.2s;
+}
+
+.category-card.selected {
+    background: #4285f4;
+    color: white;
+    border-color: #4285f4;
+}
+
+.category-card:hover {
+    border-color: #4285f4;
+    background: #f0f7ff;
+}
+
+.category-card.selected:hover {
+    background: #4285f4;
+}
+
+.category-card.add-category {
+    background: #f8f9fa;
+    border: 1px dashed #ddd;
+    color: #666;
+}
+
+.category-card.add-category:hover {
+    background: #e3f2fd;
+    border-color: #4285f4;
+    color: #4285f4;
+}
+
+.category-name {
+    font-weight: 500;
+}
+
+.category-count {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 12px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.category-card.selected .category-count {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.category-delete-btn {
+    color: #999;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.category-card.selected .category-delete-btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Tabs Section */
+.tabs-section {
+    margin-bottom: 20px;
+}
+
+.tab-navigation {
+    display: flex;
+    gap: 16px;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tab-button.ant-btn-primary {
+    background: #4285f4;
+    color: white;
+}
+
+.tab-button:hover {
+    background: #f0f7ff;
+    color: #4285f4;
+}
+
+.tab-button.ant-btn-primary:hover {
+    background: #4285f4;
+    color: white;
+}
+
+.task-search {
+    max-width: 600px;
+    width: 70%;
+}
+
+.date-display {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.date-text {
+    color: #1890ff;
+    font-weight: 600;
+}
+
+.task-container {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+}
+
+.task-card,
+.habit-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.task-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-button {
+    color: #1890ff;
+    padding: 0;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.category-btn {
+    border-radius: 20px;
+    color: rgba(0, 0, 0, 0.65);
+    border: none;
+    padding: 0 16px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.category-btn.selected {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0 12px;
+}
+
+.task-list,
+.habit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task-item,
+.habit-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    gap: 12px;
+}
+
+.task-item:hover,
+.habit-item:hover {
+    background-color: #f0f0f0;
+}
+
+.task-content,
+.habit-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.task-title,
+.habit-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.task-title.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-description,
+.habit-description {
+    font-size: 12px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.task-time,
+.habit-time {
+    font-size: 12px;
+    color: #1890ff;
+    font-weight: 500;
+    min-width: 60px;
+    text-align: right;
+}
+
+.task-actions,
+.habit-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.task-action-buttons {
+    display: none;
+    position: absolute;
+    right: 40px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.task-item:hover .task-action-buttons {
+    display: flex;
+}
+
+.habit-progress {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.progress-circle {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.progress-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.percent-symbol {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.habit-calendar {
+    width: 100%;
+}
+
+.habit-calendar .ant-picker-calendar-full .ant-picker-panel {
+    border-top: none;
+}
+
+/* Calendar styling */
+.ant-picker-calendar-mini {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.ant-picker-calendar-mini .ant-picker-calendar-date-content {
+    height: 0;
+    padding: 0;
+}
+
+.ant-picker-calendar-mini .ant-picker-calendar-date {
+    border-top: none;
+    margin: 0;
+    padding: 4px;
+    height: 28px;
+}
+
+.ant-picker-calendar-mini .ant-picker-cell-selected .ant-picker-calendar-date {
+    background-color: #e6f7ff;
+}
+
+.ant-picker-calendar-date-today {
+    border-color: #1890ff;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

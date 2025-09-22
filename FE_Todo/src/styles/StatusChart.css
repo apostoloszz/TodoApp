@@ -1,0 +1,178 @@
+/* StatusChart.css */
+.status-chart-container {
+    margin-bottom: 24px;
+    animation: fadeIn 0.5s ease-in-out;
+    width: 100%;        /* full width */
+}
+
+
+.status-chart {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    width: 100%;        /* mở rộng card */
+    max-width: none;    /* bỏ giới hạn nếu có */
+}
+
+.status-chart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.chart-title {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #333;
+}
+
+.stats-row {
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card.completed {
+    border-left: 4px solid #4CBB17;
+}
+
+.stat-card.completed.has-data:hover {
+    background: linear-gradient(to right, rgba(76, 187, 23, 0.05), transparent);
+}
+
+.stat-card.in-progress {
+    border-left: 4px solid #4169E1;
+}
+
+.stat-card.in-progress.has-data:hover {
+    background: linear-gradient(to right, rgba(65, 105, 225, 0.05), transparent);
+}
+
+.stat-card.pending {
+    border-left: 4px solid #FF6347;
+}
+
+.stat-card.pending.has-data:hover {
+    background: linear-gradient(to right, rgba(255, 99, 71, 0.05), transparent);
+}
+
+.stat-card .stat-title {
+    font-weight: 600;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.stat-card:hover .stat-title {
+    color: #000;
+}
+
+.stat-card .ant-statistic-title {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.stat-card .ant-statistic-content {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.stat-card .stat-icon {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.stat-card .stat-percentage {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.8;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 2px 8px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-percentage {
+    opacity: 1;
+    background-color: #f0f0f0;
+}
+
+.chart-tabs-container {
+    margin-top: 20px;
+}
+
+.chart-tabs .ant-tabs-tab {
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.chart-tabs .ant-tabs-tab-active {
+    background-color: #f5f5f5;
+    border-radius: 8px 8px 0 0;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.chart-legend .ant-badge {
+    margin-right: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

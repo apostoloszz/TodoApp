@@ -1,0 +1,51 @@
+/* NoteSection.css */
+.note-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.note-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.edit-note-button {
+    color: #666;
+}
+
+.note-content {
+    position: relative;
+}
+
+.note-textarea {
+    width: 100%;
+    resize: none;
+    font-size: 0.95rem;
+    border-color: #e0e0e0;
+}
+
+.save-note-button {
+    margin-top: 12px;
+    background-color: #2962FF;
+}
+
+.note-display {
+    min-height: 80px;
+    font-size: 0.95rem;
+    color: #666;
+    white-space: pre-wrap;
+    border: 1px solid transparent;
+    padding: 8px;
+    border-radius: 4px;
+}
