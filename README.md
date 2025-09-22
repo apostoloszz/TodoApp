@@ -1,123 +1,187 @@
-📝 ToDoApp
+# TodoApp - Ứng dụng Quản lý Công việc & Thói quen
 
-Ứng dụng quản lý công việc ToDoApp gồm 2 phần:
+## 📋 Giới thiệu
 
-BE_Todo: Back-end Spring Boot
+TodoApp là một ứng dụng web quản lý công việc và thói quen cá nhân toàn diện, được xây dựng với React và Ant Design. Ứng dụng hỗ trợ nhiều tính năng quản lý task, habit tracking, và hệ thống quản trị người dùng.
 
-FE_Todo: Front-end ReactJS + Ant Design
+## ✨ Tính năng chính
 
-Ứng dụng hỗ trợ đăng ký/đăng nhập bằng JWT, phân quyền ADMIN/USER, quản lý công việc (CRUD), lọc theo trạng thái và mức ưu tiên.
+### 🔐 Xác thực & Phân quyền
+- **Đăng ký/Đăng nhập**: Hệ thống authentication an toàn
+- **Phân quyền người dùng**: Admin và User với các quyền khác nhau
+- **Bảo vệ route**: Private routes cho các trang yêu cầu đăng nhập
 
-🚀 Tính năng
+### 📊 Dashboard & Thống kê
+- **Dashboard tổng quan**: Hiển thị thống kê công việc và tiến độ
+- **Biểu đồ trạng thái**: Visualize tiến độ hoàn thành task
+- **Theo dõi habit**: Monitoring thói quen hàng ngày
 
-Xác thực & Phân quyền
+### ✅ Quản lý Công việc (Tasks)
+- **CRUD Tasks**: Tạo, đọc, cập nhật, xóa công việc
+- **Phân loại**: Quản lý theo categories và priorities
+- **Trạng thái**: Theo dõi status (To Do, In Progress, Completed)
+- **Ghi chú**: Thêm notes chi tiết cho mỗi task
+- **Lọc & Tìm kiếm**: Filter tasks theo nhiều tiêu chí
 
-Đăng ký, đăng nhập, nhận JWT.
+### 🔄 Quản lý Thói quen (Habits)
+- **Habit Tracking**: Theo dõi thói quen hàng ngày
+- **Streak Counter**: Đếm chuỗi ngày thực hiện liên tiếp
+- **Progress Visualization**: Biểu đồ tiến độ thói quen
 
-ADMIN có toàn quyền, USER chỉ quản lý task của mình.
+### 📂 Quản lý Danh mục
+- **Categories Management**: Tạo và quản lý danh mục công việc
+- **Priorities**: Thiết lập mức độ ưu tiên
+- **Status Types**: Quản lý các trạng thái công việc
 
-Quản lý công việc
+### 👥 Quản lý Người dùng (Admin)
+- **User Management**: Quản lý danh sách người dùng
+- **Role Assignment**: Phân quyền cho người dùng
+- **Invite System**: Mời người dùng mới tham gia
+- **Admin Dashboard**: Tổng quan quản trị hệ thống
 
-CRUD tác vụ.
+### 🎨 Giao diện & UX
+- **Responsive Design**: Tương thích đa thiết bị
+- **Ant Design UI**: Giao diện đẹp và thân thiện
+- **Dark/Light Theme**: Hỗ trợ chế độ sáng/tối
+- **Interactive Components**: Component tương tác mượt mà
 
-Lọc theo Status (PENDING, IN_PROGRESS, COMPLETED) và Priority (LOW, MEDIUM, HIGH).
+## 🛠️ Công nghệ sử dụng
 
-Front-End
+### Frontend
+- **React 18**: Library JavaScript cho UI
+- **Ant Design**: UI Component Library
+- **React Router**: Routing cho SPA
+- **Axios**: HTTP client cho API calls
+- **React Context**: State management
+- **CSS3**: Styling và responsive design
 
-Giao diện hiện đại, responsive, dùng Ant Design.
+### Backend API Integration
+- **RESTful API**: Giao tiếp với backend qua REST API
+- **JWT Authentication**: Token-based authentication
+- **Role-based Access Control**: Phân quyền dựa trên vai trò
 
-Bảo vệ route và phân quyền bằng ProtectedRoute & AdminRoute.
+## 📁 Cấu trúc dự án
 
-🏗️ Cấu trúc dự án
+```
 ToDoApp/
-├── BE_Todo/          # Spring Boot Back-End
-│   ├── src/main/java/com/example/be_todo/
-│   │   ├── config/       # Security, JWT
-│   │   ├── controller/   # REST Controllers
-│   │   ├── dto/          # DTOs
-│   │   ├── entity/       # JPA Entities
-│   │   ├── repository/   # Spring Data JPA
-│   │   ├── security/     # JWT, UserDetails
-│   │   └── service/      # Business Logic
-│   └── resources/
-│       └── application.properties
-│   └── pom.xml
 │
-└── FE_Todo/          # React + Ant Design Front-End
-    ├── src/
-    │   ├── api/          # Axios services
-    │   ├── components/   # UI components
-    │   ├── context/      # AuthContext
-    │   ├── pages/        # Login, Register, Dashboard, Admin…
-    │   ├── routes/       # Protected & Admin routes
-    │   └── styles/       # CSS
-    └── package.json
+├─ src/
+│  ├─ main/
+│  │  ├─ java/com/example/todo/
+│  │  │   ├─ config/               # SecurityConfig, JwtAuthenticationFilter
+│  │  │   ├─ controller/           # RestController cho Auth và ToDo
+│  │  │   ├─ entity/               # Entity: User, ToDo
+│  │  │   ├─ repository/           # UserRepository, ToDoRepository
+│  │  │   ├─ service/              # UserServiceImpl, JwtService, CustomUserDetailsService
+│  │  │   └─ TodoApplication.java  # File khởi động Spring Boot
+│  │  └─ resources/
+│  │      ├─ application.properties
+│  │      └─ schema.sql / data.sql (nếu có)
+│  └─ test/                        # Unit & Integration Tests
+│
+├─ pom.xml
+└─ README.md
+```
 
-⚙️ Công nghệ
+## 🚀 Cài đặt và Chạy dự án
 
-Back-End
+### Yêu cầu hệ thống
+- Node.js >= 14.0.0
+- npm >= 6.0.0 hoặc yarn >= 1.22.0
 
-Java 17
+### Các bước cài đặt
 
-Spring Boot 3.x (Web, Data JPA, Security)
-
-JWT Authentication
-
-MySQL 8
-
-Maven
-
-Front-End
-
-React 18
-
-Ant Design 5
-
-Axios, React Router v6
-
-Context API
-
-🔧 Cài đặt
-1️⃣ Chuẩn bị
-
-JDK 17, Node.js 18+, MySQL.
-
-Tạo database rỗng: todo_app.
-
-2️⃣ Back-End
-cd BE_Todo
-# Chỉnh application.properties nếu cần
-mvn clean install
-mvn spring-boot:run
-
-
-API mặc định: http://localhost:8080
-
-3️⃣ Front-End
+1. **Clone repository**
+```bash
+git clone <repository-url>
 cd FE_Todo
+```
+
+2. **Cài đặt dependencies**
+```bash
 npm install
+# hoặc
+yarn install
+```
+
+3. **Cấu hình environment**
+```bash
+# Tạo file .env.local
+REACT_APP_API_BASE_URL=http://localhost:8080/api
+REACT_APP_APP_NAME=TodoApp
+```
+
+4. **Chạy ứng dụng**
+```bash
 npm start
+# hoặc
+yarn start
+```
 
+5. **Build cho production**
+```bash
+npm run build
+# hoặc
+yarn build
+```
 
-Giao diện: http://localhost:3000
+## 🔧 Cấu hình API
 
-🔑 Endpoints chính
-Method	Endpoint	Mô tả
-POST	/auth/register	Đăng ký
-POST	/auth/login	Đăng nhập, lấy JWT
-GET	/tasks	Lấy danh sách task (theo user)
-POST	/tasks	Tạo task
-PUT	/tasks/{id}	Cập nhật task
-DELETE	/tasks/{id}	Xóa task
-GET	/tasks/status/{status}	Lọc theo trạng thái
-GET	/tasks/priority/{priority}	Lọc theo độ ưu tiên
-GET	/users	(ADMIN) Danh sách user
-🧩 Phân quyền
+Ứng dụng sử dụng Axios để giao tiếp với backend API. Cấu hình trong `src/api/axiosInstance.js`:
 
-USER: Quản lý task của mình.
+```javascript
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
+```
 
-ADMIN: CRUD tất cả task & user.
+### API Endpoints chính:
+- **Auth**: `/auth/login`, `/auth/register`
+- **Tasks**: `/tasks`, `/tasks/:id`
+- **Habits**: `/habits`, `/habits/:id`
+- **Users**: `/users`, `/admin/users`
+- **Categories**: `/categories`
+- **Priorities**: `/priorities`
 
-JWT gửi qua header:
+## 👤 Hướng dẫn sử dụng
 
-Authorization: Bearer <token>
+### Cho Người dùng thường:
+1. **Đăng ký/Đăng nhập** vào hệ thống
+2. **Xem Dashboard** để theo dõi tổng quan
+3. **Quản lý Tasks** trong Personal Tasks
+4. **Theo dõi Habits** trong Habits Page
+5. **Phân loại công việc** bằng Categories
+
+### Cho Admin:
+1. **Quản lý người dùng** trong Users page
+2. **Theo dõi tất cả tasks** trong Admin Task Management
+3. **Phân quyền** và quản lý roles
+4. **Cấu hình hệ thống** categories, priorities, status
+
+## 🔒 Bảo mật
+
+- **JWT Token**: Authentication token được lưu an toàn
+- **Protected Routes**: Các route nhạy cảm được bảo vệ
+- **Role-based Access**: Phân quyền dựa trên vai trò người dùng
+- **Input Validation**: Validate dữ liệu đầu vào
+
+## 🐛 Debugging & Testing
+
+### Chạy tests
+```bash
+npm test
+# hoặc
+yarn test
+```
+
+### Kiểm tra linting
+```bash
+npm run lint
+# hoặc
+yarn lint
+```
+
+## 📱 Responsive Design
+
+Ứng dụng được thiết kế responsive, hỗ trợ:
+- **Desktop**: >= 1200px
+- **Tablet**: 768px - 1199px  
+- **Mobile**: < 768px
